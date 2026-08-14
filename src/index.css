@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #ff6b6b;
+  --color-brand-yellow: #feca57;
+  --color-brand-green: #1dd1a1;
+  --color-brand-purple: #5f27cd;
+  --color-brand-blue: #48dbfb;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply text-gray-900 font-sans antialiased bg-[#f0f2f5];
+    /* Dynamic animated mesh-like background */
+    background-image: 
+      radial-gradient(at 40% 20%, hsla(28,100%,74%,0.4) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(189,100%,56%,0.4) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(355,100%,93%,0.5) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsla(340,100%,76%,0.4) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(22,100%,77%,0.4) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, hsla(242,100%,70%,0.4) 0px, transparent 50%),
+      radial-gradient(at 0% 0%, hsla(343,100%,76%,0.4) 0px, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+/* Custom Utilities for Glassmorphism */
+@layer utilities {
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-[2rem];
+  }
+  .glass-input {
+    @apply bg-white/50 backdrop-blur-md border border-white/60 focus:bg-white/80 shadow-inner rounded-2xl;
+  }
+}
